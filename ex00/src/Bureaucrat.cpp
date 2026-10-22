@@ -1,81 +1,79 @@
-#include "Bureaucrat.hpp"
+#include "../includes/Bureaucrat.hpp"
+#include <iostream>
 
-int main()
+// 1. Orthodox Canonical Form
+Bureaucrat::Bureaucrat() : _name ("Unknown"), _grade(1)
 {
-	std::cout << "\n === Valid Construction === \n"
+}
 
-	try {
-		Bureaucrat high("Alice", 1);
-		std::cout << "High" << "\n";
-		Bureaucrat low("Bob", 150);
-		std::cout << "Low" << "\n";
-	}
-	//Because exceptions in C++ do not print themselves
-	/* const std::exception &e
-	avoids copying the exception
-guarantees the object exists
-gives clean syntax (e.what())
- */
-	catch (const std::exception &e) 
-	{
-		std::cout << "construction failed : "<< e.what()  <<  "\n"; //To get the human‑readable message, you must call the method: what() → returns the message
-	}
+Bureaucrat::Bureaucrat(const Bureaucrat& other) : 
+_name(other._name), _grade(other._grade)
+{
+}
 
-	std::cout << " \n === Invalid Construction ===\n"
-	try 
+Bureaucrat& Bureaucrat::operator=(const Bureaucrat& other) 
+{
+	if (this != &other)
 	{
-		Bureaucrat toolowgrade("Nick", 0);
-		std::cout << "Too Low Grade" << "\n";
-	} catch (const std::exception &e) 
-	{
-		std::cout << "Caught (grade 0): "<<e.what() << "\n";
+		_grade = other._grade;
 	}
-	try
-	{
-		Bureaucrat tooHighgrade("Lara", 151);
-		std::cout << "Too High Grade" << "\n";
-	}
-	catch (const std::exception &e) 
-	{
-		std::cout << "Caught (grade 151): "<<e.what() << "\n";
-	}
-	std::cout << "\n === Increment Boundary Test ===\n";
-	try
-	{
-		Bureaucrat maxgrade("MaxGrade", 1);
-		std::cout << maxGrade << " ->increment \n";
-		maxGrade.incrementGrade();
-	} 
-	catch (const std::exception &e) 
-	{
-		std::cout << "Increment at grade 1 threw" << e.what() << "\n";
-	}
+	return *this;
+}
 
-	std::cout << "\n === Decrement Boundary Test ===\n";
-	try
-	{
-		Bureaucrat minGrade("MinGrade", 150);
-		std::cout << minGrade << " -> decrement \n";
-		minGrade.decrementGrade();
-	} 
-	catch (const std::exception &e) 
-	{
-		std::cout << "Decrement at grade 150 threw" << e.what() << "\n";
-	}
-	std::cout << "\n ====Normal Grade changes ==== \n"
-	try
-	{
-		Bureaucrat mid("Mid", 42)
-		std::cout << mid << "\n";
-		
-		mid.incrementGrade();
-		std::cout << "After increment: " << mid << "\n"; 
-		
-		mid.decrementGrade();
-  std::cout << "After decrement: " << mid << "\n";
-	}
-	catch (const std::exception& e) {
-  std::cout << "Mid operations failed: " << e.what() << "\n";
-	}
-	return 0;
+Bureaucrat::~Bureaucrat()
+{
+}
+
+// 2. Parameterized constructor
+Bureaucrat::Bureaucrat(std::string name, int grade)
+	:_name (name), _grade(grade)
+{
+	if (grade < 1)
+		throw GradeTooHighException();
+	if (grade > 150)
+		throw GradeTooLowException();
+}
+
+// 3. Getters
+std::string Bureaucrat::getName() const
+{
+	return _name;
+}
+
+int Bureaucrat::getGrade() const
+{
+	return _grade;
+}
+
+// 4. Member functions
+void Bureaucrat::incrementGrade()
+{
+	if (_grade == 1)
+		throw GradeTooHighException();
+	_grade--;
+}
+
+void Bureaucrat::decrementGrade()
+{
+	if (_grade == 150)
+		throw GradeTooLowException();
+	_grade++;
+}
+
+// 5. Exception what()
+const char* Bureaucrat::GradeTooHighException::what() const throw()
+{
+    return "Grade too high";
+}
+
+const char* Bureaucrat::GradeTooLowException::what() const throw()
+{
+    return "Grade too low";
+}
+
+// 6. Non-member operator
+std::ostream& operator<<(std::ostream& os, const Bureaucrat& bureaucrat)
+{
+	os << bureaucrat.getName() << ", bureaucrat grade " << bureaucrat.getGrade();
+	return os;
 }
