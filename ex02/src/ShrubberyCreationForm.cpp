@@ -6,12 +6,13 @@
 /*   By: us <us@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/23 11:36:22 by us                #+#    #+#             */
-/*   Updated: 2026/10/23 12:49:49 by us               ###   ########.fr       */
+/*   Updated: 2026/10/23 15:39:11 by us               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ShrubberyCreationForm.hpp"
 #include "../includes/Bureaucrat.hpp"
+#include "../includes/AForm.hpp"
 #include <fstream>
 
 ShrubberyCreationForm::ShrubberyCreationForm() 
@@ -47,7 +48,7 @@ ShrubberyCreationForm::ShrubberyCreationForm(const std::string &target)
 
 void ShrubberyCreationForm::execute(const Bureaucrat &executor) const
 {
-    (void)executor;
+    AForm::execute(executor);
     std::ofstream outfile((_target + "_shrubbery").c_str());
     if (!outfile)
     {

@@ -6,7 +6,7 @@
 /*   By: us <us@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/23 11:05:33 by us                #+#    #+#             */
-/*   Updated: 2026/10/23 12:37:00 by us               ###   ########.fr       */
+/*   Updated: 2026/10/23 16:26:06 by us               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,20 +18,42 @@
 
 #include <iostream>
 
-int main()
+void signFromTest(Bureaucrat &br, AForm &form)
 {
     try
     {
-        Bureaucrat br("Sandy", 1);
-        ShrubberyCreationForm form("Garden");
-        form.beSigned(br);
-        form.execute(br);
-        //RobotomyRequestForm form2("Robot");
-        //PresidentialPardonForm form3("President");
+        br.signForm(form);
     }
-    catch(const std::exception &ex)
+    catch (const std::exception &ex)
     {
-        std::cerr << ex.what() << std::endl;
+        std::cerr << ex.what() << '\n';
     }
-    return 0;
+}
+
+void executeFormTest(Bureaucrat &br, AForm &form)
+{
+    try
+    {
+        form.execute(br);
+    }
+    catch (const std::exception &ex)
+    {
+        std::cerr << ex.what() << '\n';
+    }
+}
+
+void testShrubberyCreationForm()
+{
+
+	ShrubberyCreationForm form("Graden");
+	Bureaucrat br("Doe", 140);
+
+	signFromTest(br, form);
+	executeFormTest(br, form);
+}
+
+int main()
+{
+	testShrubberyCreationForm();
+	return 0;
 }

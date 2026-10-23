@@ -6,7 +6,7 @@
 /*   By: us <us@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/22 14:35:57 by us                #+#    #+#             */
-/*   Updated: 2026/10/23 11:25:01 by us               ###   ########.fr       */
+/*   Updated: 2026/10/23 15:29:22 by us               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,4 +100,12 @@ std::ostream &operator<<(std::ostream &os, const AForm &AForm)
     os << "Grade to Sign: " << AForm.getGradeToSign() << std::endl;
     os << "Grade to Execute: " << AForm.getGradeToExecute() << std::endl;
     return os;
+}
+
+void AForm::execute(const Bureaucrat &executor)const
+{
+    if (!_isSigned)
+        throw std::runtime_error("AForm Exception: Form is not signed!");
+    if (executor.getGrade() > _gradeToExecute)
+        throw std::runtime_error("AForm Exception: GradeTooLow Exception!");
 }
