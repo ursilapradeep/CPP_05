@@ -1,63 +1,68 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: uvadakku <uvadakku@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/10/21 11:26:39 by uvadakku          #+#    #+#             */
+/*   Updated: 2026/10/26 10:59:38 by uvadakku         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/Bureaucrat.hpp"
 #include <iostream>
 
-void incrementTest()
+void  tooHighTest()
 {
+    std::cout << "Invalid Test: Too High Grade" << std::endl;
     try
     {
-        Bureaucrat br("Sandy", 3);
-        std::cout << br.getName() << std::endl;	
-        br.incrementGrade();
-        br.incrementGrade();
-        br.incrementGrade();
+        Bureaucrat br("Sandy", 200);
+        std::cout << br.getName() << std::endl;
     }
-    catch(const Bureaucrat::GradeTooHighException& ex)
+    catch (const std::exception& ex)
     {
-        std::cerr << ex.what() << '\n';
+        std::cerr << "Error: "<< ex.what() << std::endl;  
     }
 }
 
-void tooHighTest()
+void  tooLowTest()
 {
-	try
-	{
-		Bureaucrat br("Sandy", -11);
-		std::cout << br.getName() << std::endl;	
-	
-	}
-	catch(const Bureaucrat::GradeTooHighException& ex)
-	{
-		std::cerr << ex.what() << '\n';
-	}	
+    std::cout << "Invalid Test: Too Low Grade" << std::endl;
+    try
+    {
+        Bureaucrat br("Sandy", -15);
+        std::cout << br.getName() << std::endl;
+    }
+    catch (const std::exception& ex)
+    {
+        std::cerr << "Error: "<< ex.what() << std::endl;  
+    }
 }
 
-void tooLowTest()
+void  validTest()
 {
-	try
-	{
-		Bureaucrat br("Sandy", 200);
-		std::cout << br.getName() << std::endl;	
-	
-	}
-	catch(const Bureaucrat::GradeTooLowException& ex)
-	{
-		std::cerr << ex.what() << '\n';
-	}	
+    std::cout << "Valid Test" << std::endl;
+    try
+    {
+        Bureaucrat br("Sandy", 75);
+        std::cout << br << std::endl;
+        br.incrementGrade();
+        std::cout << "After increment: " << br << std::endl;
+        br.decrementGrade();
+        std::cout << "After decrement: " << br << std::endl;
+    }
+    catch (const std::exception& ex)
+    {
+        std::cerr << "Error: " << ex.what() << std::endl;
+    }
 }
 
 int main()
 {
-	try
-	{
-		Bureaucrat br("Sandy", 2);
-		std::cout << br.getName() << std::endl;	
-	}
-	catch(const std::exception& ex)
-	{
-		std::cerr << ex.what() << '\n';
-	}	
-    incrementTest();
-	tooHighTest();
-	tooLowTest();
-	return 0;
+    validTest();
+    tooHighTest();
+    tooLowTest();
+    return 0;
 }

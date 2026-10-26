@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: us <us@student.42.fr>                      +#+  +:+       +#+        */
+/*   By: uvadakku <uvadakku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/23 11:05:33 by us                #+#    #+#             */
-/*   Updated: 2026/10/23 16:26:06 by us               ###   ########.fr       */
+/*   Updated: 2026/10/26 15:01:59 by uvadakku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,16 +44,39 @@ void executeFormTest(Bureaucrat &br, AForm &form)
 
 void testShrubberyCreationForm()
 {
-
-	ShrubberyCreationForm form("Graden");
+	ShrubberyCreationForm form("Home");
 	Bureaucrat br("Doe", 140);
-
+    
+    ShrubberyCreationForm form2("office");
+	Bureaucrat br2("Dua", 137);
 	signFromTest(br, form);
 	executeFormTest(br, form);
+	signFromTest(br2, form2);
+	executeFormTest(br2, form2);
+}
+
+void testRobotomyRequestForm()
+{
+    RobotomyRequestForm form("Target");
+    Bureaucrat br("Joe", 50);
+
+    signFromTest(br, form);
+    executeFormTest(br, form);
+}
+
+void testPresidentialPardonForm()
+{
+    PresidentialPardonForm form("Target");
+    Bureaucrat br("Jane", 20);
+
+    signFromTest(br, form);
+    executeFormTest(br, form);
 }
 
 int main()
 {
 	testShrubberyCreationForm();
+    testRobotomyRequestForm();
+    testPresidentialPardonForm();
 	return 0;
 }
