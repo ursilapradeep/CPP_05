@@ -6,7 +6,7 @@
 /*   By: uvadakku <uvadakku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/21 11:52:14 by uvadakku          #+#    #+#             */
-/*   Updated: 2026/10/26 10:47:02 by uvadakku         ###   ########.fr       */
+/*   Updated: 2026/11/10 11:28:06 by uvadakku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ Bureaucrat::Bureaucrat():_name("unknown"), _grade(1)
 Bureaucrat::Bureaucrat(const Bureaucrat& other) : 
 	_name(other._name), _grade(other._grade)
 {
-	*this = other;
 }
 
 Bureaucrat &Bureaucrat::operator=(const Bureaucrat& other)
@@ -33,7 +32,6 @@ Bureaucrat &Bureaucrat::operator=(const Bureaucrat& other)
 
 Bureaucrat::~Bureaucrat()
 {
-	
 }
 //Parameterized Constructor
 Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name), _grade(grade)

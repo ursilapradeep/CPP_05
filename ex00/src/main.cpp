@@ -6,7 +6,7 @@
 /*   By: uvadakku <uvadakku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/21 11:26:39 by uvadakku          #+#    #+#             */
-/*   Updated: 2026/10/26 10:59:38 by uvadakku         ###   ########.fr       */
+/*   Updated: 2026/11/10 12:22:04 by uvadakku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void  tooHighTest()
     std::cout << "Invalid Test: Too High Grade" << std::endl;
     try
     {
-        Bureaucrat br("Sandy", 200);
+        Bureaucrat br("Sandy", -15);
         std::cout << br.getName() << std::endl;
     }
     catch (const std::exception& ex)
@@ -32,7 +32,7 @@ void  tooLowTest()
     std::cout << "Invalid Test: Too Low Grade" << std::endl;
     try
     {
-        Bureaucrat br("Sandy", -15);
+        Bureaucrat br("Sandy", 200);
         std::cout << br.getName() << std::endl;
     }
     catch (const std::exception& ex)
@@ -46,7 +46,7 @@ void  validTest()
     std::cout << "Valid Test" << std::endl;
     try
     {
-        Bureaucrat br("Sandy", 75);
+        Bureaucrat br("Bob", 75);
         std::cout << br << std::endl;
         br.incrementGrade();
         std::cout << "After increment: " << br << std::endl;
