@@ -6,7 +6,7 @@
 /*   By: uvadakku <uvadakku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/10 13:00:10 by uvadakku          #+#    #+#             */
-/*   Updated: 2026/11/10 13:00:13 by uvadakku         ###   ########.fr       */
+/*   Updated: 2026/11/10 17:50:26 by uvadakku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 #include "../includes/PresidentialPardonForm.hpp"
 
 #include <iostream>
+#include <cstdlib>
+#include <ctime>
 
 void signFromTest(Bureaucrat &br, AForm &form)
 {
@@ -48,7 +50,7 @@ void testShrubberyCreationForm()
 	Bureaucrat br("Doe", 140);
     
     ShrubberyCreationForm form2("office");
-	Bureaucrat br2("Dua", 137);
+	Bureaucrat br2("Damon", 137);
 	signFromTest(br, form);
 	executeFormTest(br, form);
 	signFromTest(br2, form2);
@@ -58,7 +60,7 @@ void testShrubberyCreationForm()
 void testRobotomyRequestForm()
 {
     RobotomyRequestForm form("Target");
-    Bureaucrat br("Joe", 50);
+    Bureaucrat br("Joe", 45);
 
     signFromTest(br, form);
     executeFormTest(br, form);
@@ -75,6 +77,7 @@ void testPresidentialPardonForm()
 
 int main()
 {
+	std::srand(std::time(NULL));
 	testShrubberyCreationForm();
     testRobotomyRequestForm();
     testPresidentialPardonForm();
