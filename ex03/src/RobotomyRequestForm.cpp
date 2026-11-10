@@ -14,6 +14,7 @@
 #include "../includes/Bureaucrat.hpp"
 #include "../includes/AForm.hpp"
 #include <cstdlib>
+#include <iostream>
 
 RobotomyRequestForm::RobotomyRequestForm()
 : AForm("RobotomyRequestForm", 72, 45), _target("Unknown")

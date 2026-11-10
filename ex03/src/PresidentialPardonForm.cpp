@@ -6,13 +6,15 @@
 /*   By: uvadakku <uvadakku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/26 12:27:09 by uvadakku          #+#    #+#             */
-/*   Updated: 2026/10/26 14:25:07 by uvadakku         ###   ########.fr       */
+/*   Updated: 2026/11/10 18:05:45 by uvadakku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/PresidentialPardonForm.hpp"
+#include "../includes/AForm.hpp"
 #include "../includes/Bureaucrat.hpp"
 #include <iostream>
+#include <cstdlib>
 
 PresidentialPardonForm::PresidentialPardonForm()
     : AForm("PresidentialPardonForm", 25, 5), _target("Unknown") 
@@ -49,5 +51,5 @@ PresidentialPardonForm::PresidentialPardonForm(const std::string &target)
 void PresidentialPardonForm::execute(const Bureaucrat &executor) const
 {
     AForm::execute(executor);
-    std::cout << _target << "has been pardoned by Zaphod Beeblebrox." << std::endl;
+    std::cout << _target << " has been pardoned by Zaphod Beeblebrox." << std::endl;
 }

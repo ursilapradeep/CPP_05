@@ -14,6 +14,8 @@
 #include "../includes/Bureaucrat.hpp"
 
 #include <iostream>
+#include <cstdlib>
+#include <ctime>
 
 static void handleForm(Bureaucrat &bureaucrat, AForm *form)
 {
@@ -47,6 +49,7 @@ void testIntern()
 
 int main()
 {
+    std::srand(std::time(NULL));
     testIntern();
     return 0;
 }
