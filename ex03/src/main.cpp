@@ -6,7 +6,7 @@
 /*   By: uvadakku <uvadakku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/10 13:02:04 by uvadakku          #+#    #+#             */
-/*   Updated: 2026/11/10 13:02:07 by uvadakku         ###   ########.fr       */
+/*   Updated: 2026/11/11 11:20:08 by uvadakku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 #include "../includes/Bureaucrat.hpp"
 
 #include <iostream>
+#include <string>
+#include <exception>
 #include <cstdlib>
 #include <ctime>
 
@@ -22,7 +24,14 @@ static void handleForm(Bureaucrat &bureaucrat, AForm *form)
     if (form == NULL)
         return;
     bureaucrat.signForm(*form);
-    form->execute(bureaucrat);
+    try
+    {
+        form->execute(bureaucrat);
+    }
+    catch (std::exception &e)
+    {
+        std::cout << e.what() << std::endl;
+    }
     delete form;
 }
 

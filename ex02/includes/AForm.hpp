@@ -18,7 +18,6 @@
 #include <exception>
 #include <cstdlib>
 #include <ctime>
-#include "Bureaucrat.hpp"
 
 class Bureaucrat;
 
@@ -58,6 +57,6 @@ class AForm
         };
 };  
 
-    std::ostream &operator<<(std::ostream &os, const AForm &AForm);
+    std::ostream &operator<<(std::ostream &os, const AForm &form);
 
 #endif

@@ -6,13 +6,20 @@
 /*   By: uvadakku <uvadakku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/10 13:01:42 by uvadakku          #+#    #+#             */
-/*   Updated: 2026/11/10 13:01:45 by uvadakku         ###   ########.fr       */
+/*   Updated: 2026/11/11 11:11:04 by uvadakku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/AForm.hpp"
 #include "../includes/Bureaucrat.hpp"
+#include <stdexcept>
+
 #include <iostream>
+#include <string>
+#include <exception>
+#include <cstdlib>
+#include <ctime>
+#include <fstream>
 
 AForm::AForm ()
     :_name("Unknown"), 
@@ -93,12 +100,12 @@ const char *AForm::GradeTooLowException::what() const throw()
     return "AForm Exception: Grade is too low!";
 }
 
-std::ostream &operator<<(std::ostream &os, const AForm &AForm)
+std::ostream &operator<<(std::ostream &os, const AForm &form)
 {
-    os << "AForm Name: " << AForm.getName() << std::endl;
-    os << "Is Signed: " << (AForm.getIsSigned() ? "Yes" : "No") << std::endl;
-    os << "Grade to Sign: " << AForm.getGradeToSign() << std::endl;
-    os << "Grade to Execute: " << AForm.getGradeToExecute() << std::endl;
+    os << "AForm Name: " << form.getName() << std::endl;
+    os << "Is Signed: " << (form.getIsSigned() ? "Yes" : "No") << std::endl;
+    os << "Grade to Sign: " << form.getGradeToSign() << std::endl;
+    os << "Grade to Execute: " << form.getGradeToExecute() << std::endl;
     return os;
 }
 

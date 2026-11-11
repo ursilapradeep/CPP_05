@@ -6,7 +6,7 @@
 /*   By: uvadakku <uvadakku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/26 15:54:00 by uvadakku          #+#    #+#             */
-/*   Updated: 2026/10/26 17:13:42 by uvadakku         ###   ########.fr       */
+/*   Updated: 2026/11/11 11:07:05 by uvadakku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,12 @@
 #include "../includes/PresidentialPardonForm.hpp"
 #include "../includes/AForm.hpp"
 #include "../includes/Bureaucrat.hpp"
+
 #include <iostream>
+#include <string>
+#include <exception>
+#include <cstdlib>
+#include <ctime>
 
 Intern::Intern()
 {

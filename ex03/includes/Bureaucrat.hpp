@@ -13,7 +13,6 @@
 #ifndef Bureaucrat_HPP
 #define Bureaucrat_HPP
 
-#include "AForm.hpp"
 #include <string>
 #include <exception>
 #include <iostream>

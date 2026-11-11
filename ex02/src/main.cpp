@@ -6,7 +6,7 @@
 /*   By: uvadakku <uvadakku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/10 13:00:10 by uvadakku          #+#    #+#             */
-/*   Updated: 2026/11/11 10:45:01 by uvadakku         ###   ########.fr       */
+/*   Updated: 2026/11/11 10:59:23 by uvadakku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void testShrubberyCreationForm()
 	Bureaucrat br("Doe", 140);
     
     ShrubberyCreationForm form2("office");
-	Bureaucrat br2("Damon", 137);
+	Bureaucrat br2("Damon", 130);
 	signFromTest(br, form);
 	executeFormTest(br, form);
 	signFromTest(br2, form2);
