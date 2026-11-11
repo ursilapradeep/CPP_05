@@ -6,7 +6,7 @@
 /*   By: uvadakku <uvadakku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/10 13:00:10 by uvadakku          #+#    #+#             */
-/*   Updated: 2026/11/10 17:50:26 by uvadakku         ###   ########.fr       */
+/*   Updated: 2026/11/11 10:45:01 by uvadakku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,6 @@
 #include "../includes/RobotomyRequestForm.hpp"
 #include "../includes/PresidentialPardonForm.hpp"
 
-#include <iostream>
-#include <cstdlib>
-#include <ctime>
 
 void signFromTest(Bureaucrat &br, AForm &form)
 {

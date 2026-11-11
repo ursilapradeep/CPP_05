@@ -6,7 +6,7 @@
 /*   By: uvadakku <uvadakku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/10 13:01:01 by uvadakku          #+#    #+#             */
-/*   Updated: 2026/11/10 13:01:04 by uvadakku         ###   ########.fr       */
+/*   Updated: 2026/11/11 10:53:45 by uvadakku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,10 @@
 #define AForm_HPP
 
 #include <iostream>
+#include <string>
+#include <exception>
+#include <cstdlib>
+#include "Bureaucrat.hpp"
 
 class Bureaucrat;
 

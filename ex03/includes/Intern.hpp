@@ -6,7 +6,7 @@
 /*   By: uvadakku <uvadakku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/26 15:45:17 by uvadakku          #+#    #+#             */
-/*   Updated: 2026/10/26 15:53:31 by uvadakku         ###   ########.fr       */
+/*   Updated: 2026/11/11 10:50:59 by uvadakku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define INTERN_HPP
 
 #include "AForm.hpp"
+#include "Bureaucrat.hpp"
 
 class Intern
 {

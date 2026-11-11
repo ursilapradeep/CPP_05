@@ -6,12 +6,11 @@
 /*   By: uvadakku <uvadakku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/21 11:26:39 by uvadakku          #+#    #+#             */
-/*   Updated: 2026/11/10 12:22:04 by uvadakku         ###   ########.fr       */
+/*   Updated: 2026/11/11 10:49:01 by uvadakku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/Bureaucrat.hpp"
-#include <iostream>
 
 void  tooHighTest()
 {

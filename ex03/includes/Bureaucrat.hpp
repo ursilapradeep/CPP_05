@@ -6,13 +6,16 @@
 /*   By: uvadakku <uvadakku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/10 13:01:08 by uvadakku          #+#    #+#             */
-/*   Updated: 2026/11/10 13:01:09 by uvadakku         ###   ########.fr       */
+/*   Updated: 2026/11/11 10:51:39 by uvadakku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef Bureaucrat_HPP
 #define Bureaucrat_HPP
 
+#include "AForm.hpp"
+#include <string>
+#include <exception>
 #include <iostream>
 
 class AForm;

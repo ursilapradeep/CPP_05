@@ -6,13 +6,13 @@
 /*   By: uvadakku <uvadakku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/26 12:27:09 by uvadakku          #+#    #+#             */
-/*   Updated: 2026/10/26 14:25:07 by uvadakku         ###   ########.fr       */
+/*   Updated: 2026/11/11 10:47:19 by uvadakku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/PresidentialPardonForm.hpp"
+#include "../includes/AForm.hpp"
 #include "../includes/Bureaucrat.hpp"
-#include <iostream>
 
 PresidentialPardonForm::PresidentialPardonForm()
     : AForm("PresidentialPardonForm", 25, 5), _target("Unknown") 

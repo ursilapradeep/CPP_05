@@ -6,7 +6,7 @@
 /*   By: uvadakku <uvadakku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/26 11:56:24 by uvadakku          #+#    #+#             */
-/*   Updated: 2026/10/26 11:56:25 by uvadakku         ###   ########.fr       */
+/*   Updated: 2026/11/11 10:50:49 by uvadakku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define SHRUBBERYCREATIONFORM_HPP
 
 #include "AForm.hpp"
+#include "Bureaucrat.hpp"
 
 class Bureaucrat;
 
