@@ -6,13 +6,12 @@
 /*   By: uvadakku <uvadakku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/10 12:57:25 by uvadakku          #+#    #+#             */
-/*   Updated: 2026/11/10 12:58:40 by uvadakku         ###   ########.fr       */
+/*   Updated: 2026/11/11 10:41:36 by uvadakku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/Bureaucrat.hpp"
 #include "../includes/Form.hpp"
-#include <iostream>
 
 // 1. Orthodox Canonical Form
 Bureaucrat::Bureaucrat() : _name ("Unknown"), _grade(1)

@@ -6,13 +6,13 @@
 /*   By: uvadakku <uvadakku@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/10 12:57:35 by uvadakku          #+#    #+#             */
-/*   Updated: 2026/11/10 12:57:38 by uvadakku         ###   ########.fr       */
+/*   Updated: 2026/11/11 10:41:14 by uvadakku         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/Form.hpp"
 #include "../includes/Bureaucrat.hpp"
-#include <iostream>
+
 
 Form::Form ()
     :_name("Unknown"), 
